@@ -1,0 +1,26 @@
+directories:
+  output: build_output
+  buildResources: build
+appId: com.aidirector.pro
+productName: AI Director Pro
+win:
+  target:
+    - nsis
+  forceCodeSigning: false
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: AI Director
+files:
+  - filter:
+      - '**/*'
+      - '!dist/*'
+      - '!node_modules/.cache/*'
+      - '!assets/*'
+extraResources:
+  - from: assets
+    to: assets
+asar: true
+electronVersion: 34.5.8
